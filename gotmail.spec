@@ -1,5 +1,5 @@
 %define name	gotmail
-%define version	0.8.9
+%define version	0.9.0
 %define release %mkrel 1
 
 Name: 	 	%{name}
@@ -8,6 +8,7 @@ Version: 	%{version}
 Release: 	%{release}
 
 Source:		%{name}-%{version}.tar.bz2
+Patch0:		gotmail-0.90.patch
 URL:		http://gotmail.sourceforge.net/
 License:	GPL
 Group:		Networking/Mail
@@ -28,19 +29,21 @@ Also included is a script for use with Evolution.
 %prep
 %setup -q
 
+%patch0 -p1 -b .gotmail
+
 %build
-make
+%make
 										
 %install
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR="%{buildroot}" BINDIR=%{_bindir} MANDIR=%{_mandir}
-install -o root -g root -m 755 gotmail4evolution %buildroot/%_bindir
+#install -o root -g root -m 755 gotmail4evolution %buildroot/%_bindir
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%doc ChangeLog README sample.gotmailrc NEWS PRESSRELEASE
+%doc ChangeLog README sample.gotmailrc 
 %{_bindir}/*
 %{_mandir}/man1/*
