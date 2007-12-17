@@ -12,7 +12,6 @@ Patch0:		gotmail-0.90.patch
 URL:		http://gotmail.sourceforge.net/
 License:	GPL
 Group:		Networking/Mail
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	curl
 BuildArch:	noarch
 
