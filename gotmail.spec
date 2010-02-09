@@ -1,16 +1,15 @@
 %define name	gotmail
 %define version	0.9.0
-%define release %mkrel 4
+%define release %mkrel 5
 
 Name: 	 	%{name}
 Summary: 	Fetches mail from a Hotmail or MSN webmail account
 Version: 	%{version}
 Release: 	%{release}
-
 Source:		%{name}-%{version}.tar.bz2
 Patch0:		gotmail-0.90.patch
 URL:		http://gotmail.sourceforge.net/
-License:	GPL
+License:	GPLv2
 Group:		Networking/Mail
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	curl
@@ -28,7 +27,6 @@ Also included is a script for use with Evolution.
 
 %prep
 %setup -q
-
 %patch0 -p1 -b .gotmail
 
 %build
