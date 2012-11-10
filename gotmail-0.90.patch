@@ -1,0 +1,22 @@
+--- gotmail-0.9.0.orig/gotmail
++++ gotmail-0.9.0/gotmail
+@@ -1182,13 +1182,16 @@
+ 	my $still_a_page_to_go = 1;
+ 	my $start_line_of_nextpage_search = 0;
+ 	my @folder = ();
++	my $pageid = "page=0";
+ 
+ 	while ($still_a_page_to_go) {
+ 		$still_a_page_to_go = 0;
+ 	  # Get the messages in whatever order Hotmail says we should
+-	  push @folder,getPage("http://$host/cgi-bin/HoTMaiL?$url\&page=$page", "", 1, 1, 0);
++	  push @folder,getPage("http://$host/cgi-bin/HoTMaiL?$url\&$pageid", "", 1, 1, 0);
+ 	  for (my $line_nr=$start_line_of_nextpage_search;$line_nr<@folder;$line_nr++) {
+-		  if ($folder[$line_nr] =~ m/title="$nextpage_string"/) {
++#		  if ($folder[$line_nr] =~ m/title="$nextpage_string"/) {
++      if($folder[$line_nr] =~ m/a href="javascript:HM\('([^']+)'\)" title="$nextpage_string"/) {
++				$pageid = $1;
+ 	      $start_line_of_nextpage_search = $line_nr + 1;
+ 			  $still_a_page_to_go = 1;
+ 				$page++;
+-
