@@ -45,3 +45,38 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog README sample.gotmailrc 
 %{_bindir}/*
 %{_mandir}/man1/*
+
+
+%changelog
+* Sun Dec 05 2010 Oden Eriksson <oeriksson@mandriva.com> 0.9.0-6mdv2011.0
++ Revision: 610970
+- rebuild
+
+* Tue Feb 09 2010 Sandro Cazzaniga <kharec@mandriva.org> 0.9.0-5mdv2010.1
++ Revision: 502960
+- fix licence
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 0.9.0-4mdv2010.0
++ Revision: 429290
+- rebuild
+
+* Tue Jul 22 2008 Thierry Vignaud <tv@mandriva.org> 0.9.0-3mdv2009.0
++ Revision: 240794
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Wed Sep 05 2007 Jérôme Soyer <saispo@mandriva.org> 0.9.0-1mdv2008.0
++ Revision: 80070
+- Add Patch0
+- Import gotmail
+
+
+
+* Sat Apr 29 2006 Austin Acton <austin@mandriva.org> 0.8.9-1mdk
+- New release 0.8.9
+
+* Mon Mar  6 2006 Austin Acton <austin@mandriva.org> 0.8.8-1mdk
+- initial package
