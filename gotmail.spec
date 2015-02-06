@@ -1,6 +1,6 @@
 %define name	gotmail
 %define version	0.9.0
-%define release %mkrel 6
+%define release 7
 
 Name: 	 	%{name}
 Summary: 	Fetches mail from a Hotmail or MSN webmail account
