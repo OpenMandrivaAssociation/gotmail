@@ -8,7 +8,7 @@ Version: 	%{version}
 Release: 	%{release}
 Source:		%{name}-%{version}.tar.bz2
 Patch0:		gotmail-0.90.patch
-URL:		http://gotmail.sourceforge.net/
+URL:		https://gotmail.sourceforge.net/
 License:	GPLv2
 Group:		Networking/Mail
 BuildRoot:	%{_tmppath}/%{name}-buildroot
