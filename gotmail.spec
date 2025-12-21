@@ -15,6 +15,7 @@ BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	curl
 BuildArch:	noarch
 
+BuildRequires:	make
 %description
 This is Gotmail, a perl script to fetch mail out of your Hotmail
 or MSN account. This is especially useful if you want to move from
